@@ -1,0 +1,68 @@
+<div class="chart">
+  <h1>Legacy Clients</h1>
+  <p>Zero sum, as Core goes down Orion goes up</p>
+
+  <table>
+    <tr>
+      <td><data style="height: <%= @core_clients.quantity %>px"> <%= @core_clients.quantity  %></data></td>
+      <td><data style="height: <%= @orion_clients.quantity %>px"><%= @orion_clients.quantity %></data></td>
+    </tr>
+    <tr>
+      <th>Core</th>
+      <th>Orion</th>
+    </tr>
+  </table>
+</div>
+
+
+<div class="chart">
+  <h1>Legacy Locations</h1>
+  <p>Zero sum, as Core goes down Orion goes up</p>
+
+  <table>
+    <tr>
+      <td><data style="height: <%= @core_locations.quantity  / 10 %>px"><%= @core_locations.quantity  %></data></td>
+      <td><data style="height: <%= @orion_locations.quantity / 10 %>px"><%= @orion_locations.quantity %></data></td>
+    </tr>
+    <tr>
+      <th>Core</th>
+      <th>Orion</th>
+    </tr>
+  </table>
+</div>
+
+
+
+
+  <div class="chart">
+  <h1>New Business</h1>
+  <p>Clients and locations new to G5 on Orion only</p>
+
+  <table>
+    <tr>
+      <td><data style="height: <%= @new_biz_orion_clients.quantity %>px">  <%= @new_biz_orion_clients.quantity  %></data></td>
+      <td><data style="height: <%= @new_biz_orion_locations.quantity %>px"><%= @new_biz_orion_locations.quantity %></data></td>
+    </tr>
+    <tr>
+      <th>Clients</th>
+      <th>Locations</th>
+    </tr>
+  </table>
+</div>
+
+
+<div class="chart">
+  <h1>Core to Client Conversions</h1>
+  <p>Websites completely migrated off of Core</p>
+
+  <table>
+    <tr>
+      <td><data style="height: <%= @core_to_orion_client_conversions.quantity %>px">  <%= @core_to_orion_client_conversions.quantity  %></data></td>
+      <td><data style="height: <%= @core_to_orion_location_conversions.quantity %>px"><%= @core_to_orion_location_conversions.quantity %></data></td>
+    </tr>
+    <tr>
+      <th>Clients</th>
+      <th>Locations</th>
+    </tr>
+  </table>
+</div>
