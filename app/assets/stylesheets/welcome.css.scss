@@ -23,13 +23,15 @@ body {
     vertical-align: bottom;
     text-indent: -999em;
   }
+}
 
-  .comparison td:first-of-type data {
+.chart.comparison {
+  td:first-of-type data {
     color:      #ff0000;
     background: #ff0000;
   }
 
-  .comparison td:last-of-type data {
+  td:last-of-type data {
     color:      #00ff00;
     background: #00ff00;
   }
