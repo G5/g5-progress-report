@@ -1,13 +1,12 @@
 <%
 {
-  "Monthly Clients"   => @monthly_clients,
-  "Monthly Locations" => @monthly_locations
+  "Monthly growth of Clients"   => @monthly_clients,
+  "Monthly growth of Locations" => @monthly_locations
 }.each do |title, data|
 %>
 
 <article class="chart chart-bar">
   <h1><%= title %></h1>
-  <p>Monthly growth of <%= title.gsub(/Monthly /,"").downcase %></p>
 
   <table>
     <tr>

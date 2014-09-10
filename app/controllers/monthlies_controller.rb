@@ -2,8 +2,8 @@ class MonthliesController < ApplicationController
   before_action :set_monthly, only: [:show, :edit, :update, :destroy]
 
   def index
-    @monthly_clients   = Monthly.all.where(kind: "client").all
-    @monthly_locations = Monthly.all.where(kind: "location").all
+    @monthly_clients   = Monthly.all.where(kind: "client"  ).all.sort_by{ |m| m.year.to_s + m.month.to_s.rjust(2, "0") }
+    @monthly_locations = Monthly.all.where(kind: "location").all.sort_by{ |m| m.year.to_s + m.month.to_s.rjust(2, "0") }
   end
 
   def show
