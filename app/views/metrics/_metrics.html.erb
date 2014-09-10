@@ -1,0 +1,12 @@
+<h1>All Metrics</h1>
+
+<table>
+  <tbody>
+    <% @metrics.each do |metric| %>
+      <tr>
+        <td><%= link_to metric.name,     edit_metric_path(metric) %></td>
+        <td><%= link_to metric.quantity, edit_metric_path(metric) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

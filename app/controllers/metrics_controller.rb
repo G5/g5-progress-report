@@ -1,25 +1,21 @@
 class MetricsController < ApplicationController
-  before_action :set_metric, only: [:show, :edit, :update, :destroy]
+  before_action :set_metric,  only: [:show, :edit, :update, :destroy]
+  before_action :set_metrics, only: [:edit, :index]
 
-  # GET /metrics
   def index
-    @metrics = Metric.all
   end
 
-  # GET /metrics/1
-  def show
-  end
-
-  # GET /metrics/new
   def new
     @metric = Metric.new
   end
 
-  # GET /metrics/1/edit
   def edit
   end
 
-  # POST /metrics
+  def show
+    redirect_to edit_metric_path(params[:id])
+  end
+
   def create
     @metric = Metric.new(metric_params)
 
@@ -30,7 +26,6 @@ class MetricsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /metrics/1
   def update
     if @metric.update(metric_params)
       redirect_to @metric, notice: 'Metric was successfully updated.'
@@ -39,20 +34,21 @@ class MetricsController < ApplicationController
     end
   end
 
-  # DELETE /metrics/1
   def destroy
     @metric.destroy
     redirect_to metrics_url, notice: 'Metric was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_metric
-      @metric = Metric.find(params[:id])
-    end
+  def set_metric
+    @metric = Metric.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def metric_params
-      params.require(:metric).permit(:name, :quantity)
-    end
+  def set_metrics
+    @metrics = Metric.all
+  end
+
+  def metric_params
+    params.require(:metric).permit(:name, :quantity)
+  end
 end
