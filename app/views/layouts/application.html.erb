@@ -8,6 +8,24 @@
 </head>
 <body>
 
+<header role="banner">
+  <h1>Orion Progress Report</h1>
+  <nav role="navigation">
+    <ul>
+      <li>
+        <%= link_to_unless_current("Core vs Orion", root_path) do %>
+          <span class="active">Core vs Orion</span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to_unless_current("Monthly Orion Growth", monthlies_path) do %>
+          <span class="active">Monthly Orion Growth</span>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</header>
+
 <% unless flash[:notice].blank? %>
   <div class="flash" id="notice">
     <%= flash[:notice] %>
@@ -19,6 +37,7 @@
     <%= flash[:error] %>
   </div>
 <% end %>
+
 
 <%= yield %>
 
