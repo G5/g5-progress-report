@@ -3,12 +3,12 @@ body {
 }
 
 .chart {
-  border: 1px solid #333;
   padding: 1em;
 }
 
 data {
   display: block;
+  background: #eee;
 }
 
 th {
@@ -17,18 +17,18 @@ th {
 
 td {
   margin: 0;
-  padding: 0;
+  padding: 0 10px;
   width: 100px;
   vertical-align: bottom;
   text-indent: -999em;
 }
 
-td:first-of-type data {
+.comparison td:first-of-type data {
   color:      #ff0000;
   background: #ff0000;
 }
 
-td:last-of-type data {
+.comparison td:last-of-type data {
   color:      #00ff00;
   background: #00ff00;
 }
