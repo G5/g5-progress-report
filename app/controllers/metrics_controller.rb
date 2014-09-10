@@ -20,7 +20,7 @@ class MetricsController < ApplicationController
     @metric = Metric.new(metric_params)
 
     if @metric.save
-      redirect_to @metric, notice: 'Metric was successfully created.'
+      redirect_to metrics_path, notice: 'Metric was successfully created.'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class MetricsController < ApplicationController
 
   def update
     if @metric.update(metric_params)
-      redirect_to @metric, notice: 'Metric was successfully updated.'
+      redirect_to metrics_path, notice: 'Metric was successfully updated.'
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class MetricsController < ApplicationController
 
   def destroy
     @metric.destroy
-    redirect_to metrics_url, notice: 'Metric was successfully destroyed.'
+    redirect_to metrics_path, notice: 'Metric was successfully destroyed.'
   end
 
   private
