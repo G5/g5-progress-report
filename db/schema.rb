@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20140909212659) do
 
   create_table "metrics", force: true do |t|
     t.string   "name"
-    t.integer  "quantity"
+    t.string   "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
