@@ -1,0 +1,28 @@
+<h1>
+  <%= link_to "Monthly", monthlies_path %>
+  :
+  <small>
+    <%= @monthly.kind.pluralize.capitalize %>
+    for
+    <%= "#{@monthly.year}-#{@monthly.month.to_s.rjust(2, "0")}" %>
+  </small>
+</h1>
+
+<%= form_for(@monthly) do |f| %>
+  <% if @monthly.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@monthly.errors.count, "error") %> prohibited this monthly from being saved:</h2>
+
+      <ul>
+      <% @monthly.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :quantity %><br>
+  <%= f.number_field :quantity %>
+
+  <%= f.submit %>
+<% end %>

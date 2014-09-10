@@ -1,0 +1,35 @@
+<%
+{
+  "Monthly Clients"   => @monthly_clients,
+  "Monthly Locations" => @monthly_locations
+}.each do |title, data|
+%>
+
+<article class="chart chart-bar">
+  <h1><%= title %></h1>
+  <p>Monthly growth of <%= title.gsub(/Monthly /,"").downcase %></p>
+
+  <table>
+    <tr>
+      <% data.each do |datum| %>
+        <td><data style="height: <%= datum.quantity * 5 %>px"><%= datum.quantity %></data></td>
+      <% end %>
+    </tr>
+    <tr>
+      <% data.each do |datum| %>
+        <th><%= datum.quantity %></th>
+      <% end %>
+    </tr>
+    <tr>
+      <% data.each do |datum| %>
+        <th>
+          <%= link_to edit_monthly_path(datum) do %>
+            <%= "#{datum.year}-#{datum.month.to_s.rjust(2, "0")}" %>
+          <% end %>
+        </th>
+      <% end %>
+    </tr>
+  </table>
+</article>
+
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @monthly.year %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @monthly.month %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @monthly.kind %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @monthly.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_monthly_path(@monthly) %> |
+<%= link_to 'Back', monthlies_path %>
