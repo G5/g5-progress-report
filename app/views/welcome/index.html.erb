@@ -4,6 +4,10 @@
 
   <table>
     <tr>
+      <th><%= @new_biz_orion_clients.quantity %></th>
+      <th><%= @new_biz_orion_locations.quantity %></th>
+    </tr>
+    <tr>
       <td><data style="height: <%= @new_biz_orion_clients.quantity %>px">  <%= @new_biz_orion_clients.quantity  %></data></td>
       <td><data style="height: <%= @new_biz_orion_locations.quantity %>px"><%= @new_biz_orion_locations.quantity %></data></td>
     </tr>
@@ -20,6 +24,10 @@
   <p>Websites completely migrated off of Core</p>
 
   <table>
+    <tr>
+      <th><%= @core_to_orion_client_conversions.quantity %></th>
+      <th><%= @core_to_orion_location_conversions.quantity %></th>
+    </tr>
     <tr>
       <td><data style="height: <%= @core_to_orion_client_conversions.quantity %>px">  <%= @core_to_orion_client_conversions.quantity  %></data></td>
       <td><data style="height: <%= @core_to_orion_location_conversions.quantity %>px"><%= @core_to_orion_location_conversions.quantity %></data></td>
@@ -38,6 +46,10 @@
 
   <table>
     <tr>
+      <th><%= @core_clients.quantity %></th>
+      <th><%= @orion_clients.quantity %></th>
+    </tr>
+    <tr>
       <td><data style="height: <%= @core_clients.quantity %>px"> <%= @core_clients.quantity  %></data></td>
       <td><data style="height: <%= @orion_clients.quantity %>px"><%= @orion_clients.quantity %></data></td>
     </tr>
@@ -54,6 +66,10 @@
   <p>Zero sum, as Core goes down Orion goes up</p>
 
   <table>
+    <tr>
+      <th><%= @core_locations.quantity %></th>
+      <th><%= @orion_locations.quantity %></th>
+    </tr>
     <tr>
       <td><data style="height: <%= @core_locations.quantity  %>px"><%= @core_locations.quantity  %></data></td>
       <td><data style="height: <%= @orion_locations.quantity %>px"><%= @orion_locations.quantity %></data></td>
